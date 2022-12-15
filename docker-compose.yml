@@ -3,7 +3,30 @@ version: '3.9'
 
 services:
   node:
-    ..
+    image: ma_super_app
+    container_name: node_app
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_PORT: 3306
+      DATABASE_HOST: mysql
+      DATABASE_USERNAME: nodeuser
+      DATABASE_PASSWORD: P@ssw0rd
+      DATABASE_NAME: node
+
 
   mysql:
-    ..
+    image: mysql:5.7
+    container_name: mysqldb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_USER: nodeuser
+      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: node
+    ports:
+       - "3306:3306"
+
