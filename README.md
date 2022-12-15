@@ -3,8 +3,8 @@
 ### 1. Compléter le Dockerfile afin de builder correctement l’application contenu dans src/
 ### a. Une option de npm vous permet de n’installer que ce qui est nécessaire. Quelle est cette option ? Quelle bonne pratique Docker permet t-elle de respecter ?
 
-https://docs.docker.com/language/nodejs/build-images/
-https://www.geeksforgeeks.org/what-is-node_env-in-node-js/
+- https://docs.docker.com/language/nodejs/build-images/
+- https://www.geeksforgeeks.org/what-is-node_env-in-node-js/
 
 - On utilise l'environnement de production pour node.
 - Le fait d'installer npm avec le flag production nous permet de n'installer que les modules utiles. npm n'installera donc pas les modules devDependencies. 
